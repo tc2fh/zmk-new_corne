@@ -43,14 +43,14 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - $$mdi:keyboard-esc$$
-  - LGUI
-  - NUMBER
-  - {t: '$$mdi:keyboard-space$$', h: Fn}
+  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
+  - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
   - {t: '$$mdi:keyboard-return$$', h: Fn}
-  - SYMBOL
+  - {t: '$$mdi:keyboard-space$$', h: SYMBOL}
   - $$mdi:apple-keyboard-option$$
   NUMBER:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '`', s: '~'}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -62,44 +62,44 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - BT CLR ALL
+  - $$mdi:backspace-reverse-outline$$
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - RGB BRI
+  - RGB EFF
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:bluetooth-off$$
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
+  - $$mdi:volume-high$$
+  - '&mkp MB4'
   - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-right-bold$$
+  - '&mkp MB5'
   - HOME
   - PG UP
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - RGB BRD
+  - RGB TOG
   - {t: '$$mdi:transfer$$', type: trans}
-  - RGB OFF
-  - RGB ON
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - RGB EFF
   - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - RGB EFR
-  - RGB SPI
-  - RGB BRI
-  - RGB BRD
+  - $$mdi:volume-low$$
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
   - END
   - PG DN
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-control$$
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - INS
-  - $$mdi:backspace-reverse-outline$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-control$$
+  - MUTE
   SYMBOL:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
   - '!'
   - '@'
   - '#'
@@ -127,9 +127,9 @@ layers:
   - {t: ']', s: '}'}
   - {t: \, s: '|'}
   - {t: '`', s: '~'}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - OUT USB
-  - OUT BLE
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '&mkp MB5'
@@ -141,11 +141,11 @@ layers:
   - '}'
   - '|'
   - '~'
+  - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   Fn:
   - '&studio_unlock'
@@ -162,37 +162,37 @@ layers:
   - F10
   - F11
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-right-click-outline$$
   - '&mkp MB4'
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - $$mdi:progress-download$$
+  - PRINTSCREEN
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-right-click-outline$$
-  - PRINTSCREEN
+  - $$mdi:mouse-scroll-wheel$$
   - F12
+  - $$mdi:bluetooth-off$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:progress-download$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - '&mkp MB5'
   - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
   - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - SCROLLLOCK
-  - PAUSE BREAK
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
