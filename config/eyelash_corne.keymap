@@ -80,10 +80,10 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&out OUT_TOG  &kp EXCL     &kp AT     &kp HASH    &kp DLLR   &kp PRCNT                            &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR      &kp BSPC
-&trans        &bt BT_CLR   &mkp LCLK  &mkp MCLK   &mkp RCLK  &mkp MB4             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH      &kp DOUBLE_QUOTES
-&sys_reset    &bootloader  &trans     &none       &none      &mkp MB5   &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp QUESTION  &kp PIPE
-                                      &bt BT_NXT  &trans     &trans                                                                &trans     &trans     &trans
+&out OUT_TOG  &kp EXCL  &kp AT    &kp HASH      &kp DLLR   &kp PRCNT                            &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR      &kp BSPC
+&trans        &trans    &trans    &kp UP_ARROW  &trans     &mkp MB4             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH      &kp DOUBLE_QUOTES
+&bt BT_CLR    &trans    &kp LEFT  &kp DOWN      &kp RIGHT  &mkp MB5   &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp QUESTION  &kp PIPE
+                                  &bt BT_NXT    &trans     &trans                                                                &trans     &trans     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
