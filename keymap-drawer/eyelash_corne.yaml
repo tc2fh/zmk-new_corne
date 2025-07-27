@@ -44,10 +44,10 @@ layers:
   - {t: /, s: '?'}
   - $$mdi:keyboard-esc$$
   - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
-  - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
-  - {t: '$$mdi:keyboard-return$$', h: Fn}
   - {t: '$$mdi:keyboard-space$$', h: SYMBOL}
+  - {t: '$$mdi:keyboard-return$$', h: Fn}
+  - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
+  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
   - $$mdi:apple-keyboard-option$$
   NUMBER:
   - {t: '`', s: '~'}
@@ -93,10 +93,10 @@ layers:
   - END
   - PG DN
   - $$mdi:apple-keyboard-control$$
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - INS
-  - $$mdi:apple-keyboard-control$$
+  - {type: held}
   - MUTE
   SYMBOL:
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
@@ -126,7 +126,7 @@ layers:
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - {t: \, s: '|'}
-  - {t: '`', s: '~'}
+  - '"'
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
@@ -139,13 +139,13 @@ layers:
   - +
   - '{'
   - '}'
+  - '?'
   - '|'
-  - '~'
   - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   Fn:
   - '&studio_unlock'
@@ -176,7 +176,7 @@ layers:
   - $$mdi:mouse-right-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
   - F12
-  - $$mdi:bluetooth-off$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
@@ -192,7 +192,7 @@ layers:
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
