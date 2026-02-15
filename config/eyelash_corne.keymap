@@ -28,6 +28,16 @@
 
 / {
     behaviors {
+        hrm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
@@ -56,22 +66,22 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB         &kp Q  &kp W           &kp E         &kp R             &kp T                               &kp UP                &kp Y        &kp U              &kp I          &kp O            &kp P     &kp BSPC
-&kp LEFT_SHIFT  &kp A  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt RIGHT_SHIFT J  &mt RCTRL K    &mt RIGHT_ALT L  &kp SEMI  &kp SQT
+&kp TAB         &kp Q  &kp W            &kp E         &kp R              &kp T                               &kp UP                &kp Y        &kp U               &kp I          &kp O             &kp P     &kp BSPC
+&kp LEFT_SHIFT  &kp A  &hrm LEFT_ALT S  &hrm LCTRL D  &hrm LEFT_SHIFT F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &hrm RIGHT_SHIFT J  &hrm RCTRL K   &hrm RIGHT_ALT L  &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z  &kp X           &kp C         &kp V             &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M              &kp COMMA      &kp DOT          &kp FSLH  &kp ESC
                                        &kp LEFT_ALT  &lt 1 SPACE       &lt 3 ENTER                                               &lt 3 ENTER  &lt 2 SPACE        &kp BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&kp GRAVE  &kp N1           &kp N2           &kp N3           &kp N4  &kp N5                                    &mmv MOVE_UP                     &kp N6          &kp N7           &kp N8           &kp N9           &kp MINUS         &kp EQUAL
-&trans     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &trans  &bt BT_CLR                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp EQUAL       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG  &trans  &trans      &kp C_MUTE                    &mmv MOVE_DOWN                   &kp BACKSLASH   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp COMMA         &kp PERIOD
-                                             &trans           &trans  &trans                                                                     &kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp PERIOD
+&kp GRAVE  &kp N1           &kp N2           &kp N3           &kp N4  &kp N5                                    &mmv MOVE_UP                     &kp N6          &kp N7  &kp N8  &kp N9  &kp MINUS         &kp EQUAL
+&trans     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &trans  &bt BT_CLR                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp EQUAL       &kp N4  &kp N5  &kp N6  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&trans     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG  &trans  &trans      &kp C_MUTE                    &mmv MOVE_DOWN                   &kp BACKSLASH   &kp N1  &kp N2  &kp N3  &kp COMMA         &kp PERIOD
+                                             &trans           &trans  &trans                                                                     &kp LEFT_SHIFT  &kp N0  &kp PERIOD
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -80,8 +90,8 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&out OUT_TOG  &kp PAGE_UP    &kp K_VOLUME_DOWN  &kp UP_ARROW    &kp K_VOLUME_UP  &kp K_MUTE                              &mmv MOVE_UP                     &kp CARET  &kp AMPS          &kp LC(LS(UP_ARROW))  &kp LPAR           &kp RPAR      &kp BSPC
-&trans        &kp PAGE_DOWN  &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT        &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp LC(LS(LEFT))  &kp LC(LS(DOWN))      &kp LC(LS(RIGHT))  &kp BSLH      &kp DOUBLE_QUOTES
+&out OUT_TOG  &kp PAGE_UP    &kp C_VOL_DN       &kp UP_ARROW    &kp C_VOL_UP     &kp C_MUTE                              &mmv MOVE_UP                     &kp CARET  &kp AMPS          &kp LC(LS(UP_ARROW))  &kp LPAR           &kp RPAR      &kp BSPC
+&trans        &kp PAGE_DOWN  &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT        &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp LC(LS(LEFT))  &kp LC(LS(DOWN))      &kp LC(LS(RIGHT))  &kp BSLH      &kp DQT
 &trans        &kp LC(Z)      &kp LC(X)          &kp LC(C)       &kp LC(V)        &mkp MB5      &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS          &kp LBRC              &kp RBRC           &kp QUESTION  &kp PIPE
                                                 &kp BACKSPACE   &kp DELETE       &kp LEFT_ALT                                                             &trans     &trans            &trans
             >;
@@ -93,7 +103,7 @@
             display-name = "Fn";
             bindings = <
 &trans  &trans     &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans                                  &mmv MOVE_UP                     &kp F6           &kp F7  &kp F8  &kp F9  &kp F12  &kp LC(LS(P))
-&trans  &mkp MCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PRINTSCREEN  &kp F4  &kp F5  &kp F6  &kp F11  &kp LC(LS(N))
+&trans  &mkp MCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PSCRN        &kp F4  &kp F5  &kp F6  &kp F11  &kp LC(LS(N))
 &trans  &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &sys_reset       &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                    &trans          &trans           &trans                                                                   &trans           &trans  &trans
             >;
