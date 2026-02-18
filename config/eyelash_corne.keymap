@@ -83,18 +83,6 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        layer_4 {
-            display-name = "Mirror";
-            bindings = <
-&kp BSPC   &kp P     &kp O             &kp I          &kp U               &kp Y                                     &kp UP                &trans  &trans  &trans  &trans  &trans  &trans
-&kp SQT    &kp SEMI  &hrm RIGHT_ALT L  &hrm RCTRL K   &hrm RIGHT_SHIFT J  &kp H                         &kp LEFT  &kp ENTER  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans
-&kp ESC    &kp FSLH  &kp DOT           &kp COMMA      &kp M               &kp N        &kp SPACE                   &kp DOWN              &trans  &trans  &trans  &trans  &trans  &trans
-                                       &kp BACKSPACE   &lt 2 SPACE        &lt 3 ENTER                                                     &trans  &trans  &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
         lower_layer {
             display-name = "NUMBER";
             bindings = <
@@ -129,6 +117,30 @@
             >;
 
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        layer_4 {
+            display-name = "Mirror";
+            bindings = <
+&kp BSPC   &kp P     &kp O             &kp I          &kp U               &kp Y                                     &kp UP                &trans  &trans  &trans  &trans  &trans  &trans
+&kp SQT    &kp SEMI  &hrm RIGHT_ALT L  &hrm RCTRL K   &hrm RIGHT_SHIFT J  &kp H                         &kp LEFT  &kp ENTER  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans
+&kp ESC    &kp FSLH  &kp DOT           &kp COMMA      &kp M               &kp N        &kp SPACE                   &kp DOWN              &trans  &trans  &trans  &trans  &trans  &trans
+                                       &kp BACKSPACE   &lt 2 SPACE        &lt 5 ENTER                                                     &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        layer_5 {
+            display-name = "Numpad";
+            bindings = <
+&kp EQUAL  &trans  &kp N7  &kp N8  &kp N9  &kp MINUS                                &kp UP                &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &kp N4  &kp N5  &kp N6  &kp PLUS              &kp LEFT  &kp ENTER  &kp RIGHT            &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &kp N0  &kp N1  &kp N2  &kp N3  &kp DOT   &kp SPACE              &kp DOWN                      &trans  &trans  &trans  &trans  &trans  &trans
+                           &trans  &trans  &trans                                                           &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
