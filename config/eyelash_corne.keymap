@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-tap-dance";
             display-name = "Alt/Layer 4 Tap Dance";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&mo 4>;
+            bindings = <&kp LEFT_ALT>, <&tog 4>;
         };
     };
 
