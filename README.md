@@ -9,6 +9,17 @@
 
 如果您需要该键盘的 3D 模型，请发送电子邮件至 `380465425@qq.com`。
 
+## Custom nice!view — Hummingbird 🐦
+
+> **Note:** despite the `nice_view_gem` name, this fork's shield shows a
+> **hummingbird**, not the original gem/crystal. It flaps on the peripheral
+> half in a white-on-black theme and pauses when the keyboard is idle to save
+> power.
+
+<p align="center">
+  <img src="assets/hummingbird.gif" width="220" alt="Hummingbird animation on the nice!view display">
+</p>
+
 ## 使用说明
 
 1. [叉取此仓库](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)。
