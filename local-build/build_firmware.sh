@@ -3,8 +3,10 @@
 # Builds both halves of the eyelash_corne with the nice_view_gem shield.
 #   /workspace        -> persistent "zmk-ws" docker volume (ZMK + Zephyr + modules)
 #   /workspace/config -> this repo's config/ (keymap, conf, west.yml)
-#   /repo             -> this repo root (provides boards/arm/eyelash_corne via BOARD_ROOT)
-#   the hummingbird crystal.c is bind-mounted over nice-view-gem's asset
+#   /repo             -> this repo root; added as a Zephyr module so its
+#                        boards/arm/eyelash_corne (board) and
+#                        boards/shields/nice_view_gem (shield + hummingbird) are
+#                        found. This mirrors ZMK CI's -DZMK_EXTRA_MODULES.
 set -uo pipefail
 cd /workspace
 west zephyr-export >/dev/null 2>&1
@@ -16,7 +18,7 @@ for side in left right; do
     -b eyelash_corne_${side} \
     -- -DSHIELD=nice_view_gem \
        -DZMK_CONFIG=/workspace/config \
-       -DBOARD_ROOT=/repo || rc=1
+       -DZMK_EXTRA_MODULES=/repo || rc=1
   uf2=/workspace/build/${side}/zephyr/zmk.uf2
   if [ -f "$uf2" ]; then
     cp "$uf2" /out/eyelash_corne_${side}.uf2

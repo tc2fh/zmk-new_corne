@@ -2,18 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: m165437
-      url-base: https://github.com/M165437
   projects:
-    - name: eyelash_corne
-      url: https://github.com/a741725193/zmk-new_corne
-      revision: main
+    # Standalone: the eyelash_corne board and the nice_view_gem shield (with the
+    # hummingbird animation) are vendored in this repo under boards/, discoverable
+    # via zephyr/module.yml (board_root: .). Only ZMK itself is pulled, pinned to a
+    # tag, so nothing external can change out from under the build.
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-    - name: nice-view-gem
-      remote: m165437
-      revision: v0.3.0
   self:
     path: config

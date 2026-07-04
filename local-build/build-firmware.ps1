@@ -1,6 +1,8 @@
-# Build eyelash_corne firmware (both halves) locally with Docker + the nice_view_gem
-# hummingbird display. Run from anywhere:  .\local-build\build-firmware.ps1
+# Build eyelash_corne firmware (both halves) locally with Docker.
+# Run from anywhere:  .\local-build\build-firmware.ps1
 #
+# Self-contained: the board and the nice_view_gem shield (with the hummingbird
+# animation) are vendored in this repo, so only ZMK itself is downloaded.
 # Requirements: Docker Desktop running. First run downloads ZMK + Zephyr into a
 # persistent docker volume ("zmk-ws"); later runs reuse it and are fast.
 #
@@ -8,13 +10,11 @@
 
 $ErrorActionPreference = "Stop"
 
-# --- paths (edit if you move these repos) ---
+# --- paths (edit $Repo if you move it) ---
 $Repo    = "C:\Users\Tien\Documents\local_coding_projects\zmk-new_corne"
-$Gem     = "C:\Users\Tien\Documents\local_coding_projects\nice-view-gem"   # branch: hummingbird (v0.3.0 + LVGL-8 art)
 $Img     = "zmkfirmware/zmk-build-arm:stable"
 $Scripts = "$Repo\local-build"
 $Out     = "$Repo\firmware"
-$Crystal = "$Gem\boards\shields\nice_view_gem\assets\crystal.c"
 
 New-Item -ItemType Directory -Force $Out | Out-Null
 
@@ -27,13 +27,12 @@ if ($hasWest -ne "YES") {
     if ($LASTEXITCODE -ne 0) { throw "west setup failed" }
 }
 
-# 2) build both halves; the hummingbird crystal.c is bind-mounted over v0.3.0's asset
-Write-Host "Building both halves with the hummingbird animation..." -ForegroundColor Cyan
+# 2) build both halves; board + shield come from this repo via ZMK_EXTRA_MODULES
+Write-Host "Building both halves (nice_view_gem + hummingbird)..." -ForegroundColor Cyan
 docker run --rm `
     -v zmk-ws:/workspace `
     -v "${Repo}\config:/workspace/config" `
     -v "${Repo}:/repo" `
-    -v "${Crystal}:/workspace/nice-view-gem/boards/shields/nice_view_gem/assets/crystal.c" `
     -v "${Scripts}:/scripts" `
     -v "${Out}:/out" `
     -w /workspace $Img `
