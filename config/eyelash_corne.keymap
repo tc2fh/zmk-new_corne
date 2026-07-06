@@ -86,9 +86,9 @@
             display-name = "NUMBER";
             bindings = <
 &kp GRAVE  &kp N1           &kp N2           &kp N3           &kp N4  &kp N5                                    &mmv MOVE_UP                     &kp N6         &kp N7  &kp N8      &kp N9  &kp MINUS         &kp EQUAL
-&trans     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &trans  &bt BT_CLR                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp EQUAL      &kp N4  &kp N5      &kp N6  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG  &trans  &trans      &kp C_MUTE                    &mmv MOVE_DOWN                   &kp BACKSLASH  &kp N1  &kp N2      &kp N3  &kp COMMA         &kp PERIOD
-                                             &trans           &trans  &trans                                                                     &kp BACKSPACE  &kp N0  &kp PERIOD
+&trans     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &trans  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp EQUAL      &kp N4  &kp N5      &kp N6  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&bt BT_CLR &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG  &trans  &trans      &kp C_MUTE                    &mmv MOVE_DOWN                   &kp BACKSLASH  &kp N1  &kp N2      &kp N3  &kp COMMA         &kp PERIOD
+                                             &trans           &trans  &trans                                                                       &kp BACKSPACE  &kp N0  &kp PERIOD
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -124,7 +124,7 @@
 &kp TAB     &kp Q  &kp W  &kp E  &kp R  &kp T                               &kp UP                &trans  &trans  &trans  &trans  &trans  &trans
 &kp LSHIFT  &kp A  &kp S  &kp D  &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans
 &kp LCTRL   &kp Z  &kp X  &kp C  &kp V  &kp B        &kp SPACE              &kp DOWN              &trans  &trans  &trans  &trans  &trans  &trans
-                                 &td_alt  &lt 5 SPACE  &kp ENTER                                  &trans  &trans  &trans
+              &td_alt  &kp SPACE  &lt 5 ENTER                                                     &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
